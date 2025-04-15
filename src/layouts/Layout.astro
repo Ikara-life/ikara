@@ -1,0 +1,17 @@
+import { geistSans, fontVariables } from '@/lib/fonts';
+
+<!DOCTYPE html>
+<html lang="en" class={geistSans.className}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <style is:global>
+      {fontVariables}
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

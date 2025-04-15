@@ -1,0 +1,64 @@
+---
+import HeroButtons from './ui/HeroButtons.astro';
+---
+
+<section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+  <!-- Background with gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40"></div>
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+
+  <div class="container relative z-10 text-center px-4">
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in gradient-text">
+      A New Rhythm for Living
+    </h1>
+    <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto animate-fade-in [animation-delay:0.2s]">
+      In a world moving too fast, Ikara is a gentle pause — a compass guiding you toward what really matters.
+    </p>
+    <HeroButtons />
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg
+      class="w-6 h-6 text-white"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+      />
+    </svg>
+  </div>
+</section>
+
+<style>
+  .hero-bg {
+    background-color: #1a365d; /* Fallback color */
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+</style>
