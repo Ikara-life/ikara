@@ -50,7 +50,7 @@ export default function Experience() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {experiences.map((exp, index) => (
                 <Card
-                    key={index}
+                    key={exp.title}
                     className="border-gray-200 hover:border-gray-300 transition-colors animate-fade-in"
                     style={{animationDelay: `${index * 0.1}s`}}
                 >
