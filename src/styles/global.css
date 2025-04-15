@@ -43,6 +43,10 @@
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
 
+  /* Background variables */
+  --footer-background: white;
+  --content-background: white;
+
   /* Chart colors */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -105,6 +109,18 @@
 
   .theme-gradient {
     @apply bg-gradient-to-r from-amber-600 via-amber-500 to-amber-400 bg-clip-text text-transparent;
+  }
+
+  .ikara-gradient {
+    background: white;
+    background-image: radial-gradient(circle at 15% 50%, #03738C 0%, transparent 25%),
+                     radial-gradient(circle at 40% 70%, #9CCED9 0%, transparent 30%),
+                     radial-gradient(circle at 70% 20%, #037F8C 0%, transparent 35%),
+                     radial-gradient(circle at 85% 60%, #194023 0%, transparent 25%),
+                     radial-gradient(circle at 55% 40%, #F2B6A0 0%, transparent 30%),
+                     radial-gradient(circle at 25% 20%, #F2B6A0 0%, transparent 20%),
+                     radial-gradient(circle at 75% 50%, #F2B6A0 0%, transparent 25%),
+                     radial-gradient(circle at 30% 80%, #F2B6A0 0%, transparent 15%);
   }
 }
 
