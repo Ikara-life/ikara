@@ -8,6 +8,7 @@ import Experience from '@/components/Experience';
 import AboutUs from '@/components/AboutUs.astro';
 import Apply from '@/components/Apply';
 import Footer from '@/components/Footer';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <html lang="en">
@@ -20,6 +21,7 @@ import Footer from '@/components/Footer';
 </head>
 
 <body style="background: var(--footer-background)">
+<Layout>
 <Navbar client:load/>
 <main style="background: var(--content-background)">
   <Hero/>
@@ -29,6 +31,7 @@ import Footer from '@/components/Footer';
   <Apply client:load/>
 </main>
 <Footer client:load/>
+</Layout>
 </body>
 </html>
 
