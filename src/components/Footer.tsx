@@ -1,84 +1,55 @@
 export default function Footer() {
   return (
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold font-serif">Ikara</h3>
-              <p className="text-gray-400">
-                A New Rhythm for Living
-              </p>
+      <footer
+          className="bg-[#080314] bg-gradient-to-br from-[#080314] via-[#150b30] via-[#3a0d40] to-[#44073f] text-white py-16 relative overflow-hidden font-sans">
+        <div className="container mx-auto px-8">
+          <div className="mb-16">
+            <div className="flex items-center mb-2">
+              <span className="text-sm mr-2">+</span>
+              <h3 className="text-sm font-medium">Contact Us</h3>
+            </div>
+            <h2 className="text-4xl font-bold mb-4">Interested in a new rhythm for living?</h2>
+          </div>
+
+          <div className="mt-24 flex flex-col md:flex-row justify-between items-start">
+            <div>
+              <p className="text-sm text-gray-400 mb-2">Contact Ikara at:</p>
+              <a href="mailto:hello@ikara.co"
+                 className="text-white hover:text-gray-300 flex items-center">
+                hello@ikara.co
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20"
+                     fill="currentColor">
+                  <path fillRule="evenodd"
+                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"/>
+                </svg>
+              </a>
             </div>
 
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Quick Links</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#about" className="text-gray-400 hover:text-white transition-colors">
-                    What is Ikara
-                  </a>
-                </li>
-                <li>
-                  <a href="#experience"
-                     className="text-gray-400 hover:text-white transition-colors">
-                    Experience
-                  </a>
-                </li>
-                <li>
-                  <a href="#about-us" className="text-gray-400 hover:text-white transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#apply" className="text-gray-400 hover:text-white transition-colors">
-                    Apply
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Connect</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Email
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Legal</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Terms & Conditions
-                  </a>
-                </li>
-              </ul>
+            <div className="flex space-x-8 mt-8 md:mt-0">
+              <a href="#how" className="text-white hover:text-gray-300">How It Works</a>
+              <a href="#benefits" className="text-white hover:text-gray-300">Benefits</a>
+              <a href="#features" className="text-white hover:text-gray-300">Features</a>
+              <a href="#team" className="text-white hover:text-gray-300">Team</a>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>© 2025 Ikara Collective. All rights reserved.</p>
+          <div className="mt-24 flex flex-col items-center">
+            <div className="text-9xl font-bold mb-12">IKARA</div>
+
+            <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8">
+              <p className="text-sm text-gray-400">© 2025 Ikara. All rights reserved.</p>
+
+              <p className="text-sm text-gray-500 my-4 md:my-0">Made slowly & with intention.</p>
+
+              <div className="flex space-x-8">
+                <a href="#linkedin" className="text-gray-400 hover:text-white text-sm">LinkedIn</a>
+                <a href="#facebook" className="text-gray-400 hover:text-white text-sm">Facebook</a>
+                <a href="#twitter" className="text-gray-400 hover:text-white text-sm">Twitter</a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
-  )
+  );
 }

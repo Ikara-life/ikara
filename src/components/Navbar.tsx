@@ -1,68 +1,67 @@
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger
 } from "@/components/ui/navigation-menu"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import {Button} from "@/components/ui/button"
-import {Menu} from "lucide-react"
+import {useEffect, useState} from "react"
 
 export default function Navbar() {
+  const [isAtTop, setIsAtTop] = useState(true)
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY < 100)
+    }
+    handleScroll()
+    window.addEventListener("scroll", handleScroll)
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const textColor = isAtTop ? "text-white" : "text-[#1A1F2C]"
+
   return (
       <nav
-          className="fixed top-0 left-0 right-0 w-full z-[100] backdrop-blur-md bg-white/70 border-b border-white/20 shadow-sm">
+          className={`fixed top-0 left-0 right-0 w-full z-[100] backdrop-blur-xl ${isAtTop ? 'bg-transparent' : 'bg-white/5'} border-b border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.1)] transition-colors duration-300`}>
         <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold font-serif text-gray-900">Ikara</div>
+          <div className="flex items-center justify-between flex-wrap">
+            <div className={`text-2xl font-bold ${textColor}`}>Ikara</div>
 
-            {/* Desktop Navigation */}
-            <NavigationMenu className="hidden md:flex">
-              <NavigationMenuList className="gap-1">
+            <NavigationMenu className="flex">
+              <NavigationMenuList className="gap-2 flex-wrap">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent hover:bg-white/50 data-[state=open]:bg-white/50">
-                    What is Ikara
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="backdrop-blur-md bg-white/70 border border-white/20 shadow-lg rounded-lg">
-                    <ul className="grid gap-1 p-2 w-[400px]">
-                      <li>
-                        <NavigationMenuLink
-                            href="#about"
-                            className="block p-3 text-gray-700 hover:bg-white/50 rounded-lg transition-colors"
-                        >
-                          About Ikara
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink
-                            href="#experience"
-                            className="block p-3 text-gray-700 hover:bg-white/50 rounded-lg transition-colors"
-                        >
-                          The Experience
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
+                  <NavigationMenuLink
+                      href="#about"
+                      className={`px-4 py-2 ${textColor} hover:bg-[#9b87f5]/10 rounded-lg transition-colors block`}
+                  >
+                    About Ikara
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                      href="#experience"
+                      className={`px-4 py-2 ${textColor} hover:bg-[#9b87f5]/10 rounded-lg transition-colors block`}
+                  >
+                    The Experience
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
                   <NavigationMenuLink
                       href="#about-us"
-                      className="px-4 py-2 text-gray-700 hover:bg-white/50 rounded-lg transition-colors"
+                      className={`px-4 py-2 ${textColor} hover:bg-[#9b87f5]/10 rounded-lg transition-colors block`}
                   >
                     About Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Button asChild variant="default" className="bg-black hover:bg-gray-800">
+                  <Button
+                      asChild
+                      className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white border-none shadow-sm transition-colors"
+                  >
                     <NavigationMenuLink href="#apply">
                       Apply
                     </NavigationMenuLink>
@@ -70,40 +69,6 @@ export default function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-
-            {/* Mobile Navigation */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon" className="hover:bg-white/50">
-                  <Menu className="h-5 w-5 text-gray-700" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="end"
-                className="w-56 backdrop-blur-md bg-white/70 border border-white/20 shadow-lg rounded-lg"
-              >
-                <DropdownMenuItem className="focus:bg-white/50">
-                  <NavigationMenuLink href="#about" className="w-full text-gray-700">
-                    About Ikara
-                  </NavigationMenuLink>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="focus:bg-white/50">
-                  <NavigationMenuLink href="#experience" className="w-full text-gray-700">
-                    The Experience
-                  </NavigationMenuLink>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="focus:bg-white/50">
-                  <NavigationMenuLink href="#about-us" className="w-full text-gray-700">
-                    About Us
-                  </NavigationMenuLink>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="focus:bg-white/50">
-                  <NavigationMenuLink href="#apply" className="w-full text-gray-700">
-                    Apply
-                  </NavigationMenuLink>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
         </div>
       </nav>
