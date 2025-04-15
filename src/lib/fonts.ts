@@ -1,10 +1,9 @@
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import {GeistSans} from 'geist/font/sans';
+import {GeistMono} from 'geist/font/mono';
 
 export const geistSans = GeistSans;
 export const geistMono = GeistMono;
 
-// Add CSS variables for font families
 export const fontVariables = `
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 

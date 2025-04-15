@@ -1,10 +1,14 @@
 # Ikara
 
-A modern, high-performance web application designed for seamless user experiences and efficient content delivery.
+A modern, high-performance web application designed for seamless user experiences and efficient
+content delivery.
 
 ## 🚀 Project Overview
 
-Ikara is an innovative web platform that leverages cutting-edge technologies to deliver exceptional performance and user experience. Built with a modern tech stack, it combines Astro's powerful static site generation capabilities with React's dynamic component system and Tailwind CSS's flexible styling.
+Ikara is an innovative web platform that leverages cutting-edge technologies to deliver exceptional
+performance and user experience. Built with a modern tech stack, it combines Astro's powerful static
+site generation capabilities with React's dynamic component system and Tailwind CSS's flexible
+styling.
 
 ### ✨ Key Features
 
@@ -17,6 +21,7 @@ Ikara is an innovative web platform that leverages cutting-edge technologies to 
 ### 🎯 Purpose
 
 Ikara serves as a robust foundation for building modern web applications, perfect for:
+
 - Content-rich websites requiring optimal performance
 - Interactive web applications with dynamic user interfaces
 - Projects requiring scalable and maintainable codebases

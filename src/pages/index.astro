@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
+import {Button} from "../components/ui/button";
 import Navbar from '@/components/Navbar';
 import Hero from '../components/Hero.astro';
 import WhatIsIkara from '@/components/WhatIsIkara';
@@ -9,45 +8,42 @@ import Experience from '@/components/Experience';
 import AboutUs from '@/components/AboutUs';
 import Apply from '@/components/Apply';
 import Footer from '@/components/Footer';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Ikara - A New Rhythm for Living</title>
-	</head>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="generator" content={Astro.generator}/>
+  <title>Ikara - A New Rhythm for Living</title>
+</head>
 
-	<body>
-		<Navbar client:load />
-		<main>
-			<Hero />
-			<WhatIsIkara client:load />
-			<Experience client:load />
-			<AboutUs client:load />
-			<Apply client:load />
-		</main>
-		<Footer client:load />
-	</body>
+<body>
+<Navbar client:load/>
+<main>
+  <Hero/>
+  <WhatIsIkara client:load/>
+  <Experience client:load/>
+  <AboutUs client:load/>
+  <Apply client:load/>
+</main>
+<Footer client:load/>
+</body>
 </html>
 
 <style is:global>
-	:root {
-		--astro-code-color-text: #ffffff;
-		--astro-code-color-background: #000000;
-		--astro-code-token-constant: #ffffff;
-		--astro-code-token-string: #ffffff;
-		--astro-code-token-comment: #ffffff;
-		--astro-code-token-keyword: #ffffff;
-		--astro-code-token-parameter: #ffffff;
-		--astro-code-token-function: #ffffff;
-		--astro-code-token-string-expression: #ffffff;
-		--astro-code-token-punctuation: #ffffff;
-		--astro-code-token-link: #ffffff;
-	}
+  :root {
+    --astro-code-color-text: #ffffff;
+    --astro-code-color-background: #000000;
+    --astro-code-token-constant: #ffffff;
+    --astro-code-token-string: #ffffff;
+    --astro-code-token-comment: #ffffff;
+    --astro-code-token-keyword: #ffffff;
+    --astro-code-token-parameter: #ffffff;
+    --astro-code-token-function: #ffffff;
+    --astro-code-token-string-expression: #ffffff;
+    --astro-code-token-punctuation: #ffffff;
+    --astro-code-token-link: #ffffff;
+  }
 </style>
