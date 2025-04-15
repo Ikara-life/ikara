@@ -1,35 +1,41 @@
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card"
+import {Card, CardHeader, CardContent} from "@/components/ui/card"
 
 const experiences = [
   {
-    title: "Flow",
-    description: "Mornings of Movement & Stillness",
-    details: "Sunrise yoga, breathwork, and forest walks to ground your mind.",
-    icon: "🧘"
+    icon: "🌿",
+    title: "Nature Immersion",
+    description: "Connect with the natural world",
+    details: "Daily guided nature walks, meditation in serene settings, and opportunities to observe local wildlife."
   },
   {
-    title: "Learn",
-    description: "Weekly Fireside Conversations",
-    details: "Dialogue with founders, thinkers, and creatives around the fire.",
-    icon: "💬"
+    icon: "🧘",
+    title: "Mindful Practices",
+    description: "Cultivate inner peace",
+    details: "Morning yoga sessions, guided meditation, and mindfulness workshops to help you stay present."
   },
   {
-    title: "Create",
-    description: "Focused Work in Nature",
-    details: "Co-working spaces surrounded by silence and forest.",
-    icon: "🌄"
+    icon: "🎨",
+    title: "Creative Expression",
+    description: "Unleash your creativity",
+    details: "Art workshops, writing sessions, and collaborative projects to explore your creative side."
   },
   {
-    title: "Connect",
-    description: "Intentional Gatherings & Shared Meals",
-    details: "Deep conversations and nourishing food under the stars.",
-    icon: "🫶"
+    icon: "🍽️",
+    title: "Nourishing Cuisine",
+    description: "Savor every bite",
+    details: "Locally sourced, plant-based meals prepared with care and intention."
   },
   {
-    title: "Reset",
-    description: "Digital Detox Evenings",
-    details: "Journaling, music, stillness, and star-gazing.",
-    icon: "🔥"
+    icon: "💭",
+    title: "Reflection Time",
+    description: "Process and integrate",
+    details: "Dedicated spaces and time for personal reflection and journaling."
+  },
+  {
+    icon: "🤝",
+    title: "Community Connection",
+    description: "Build meaningful relationships",
+    details: "Group activities and shared experiences to foster deep connections with fellow participants."
   }
 ]
 
@@ -37,7 +43,7 @@ export default function Experience() {
   return (
       <section id="experience" className="section-padding bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="section-title gradient-text">
+          <h2 className="section-title text-gradient">
             Live differently, one day at a time.
           </h2>
 
@@ -45,15 +51,15 @@ export default function Experience() {
             {experiences.map((exp, index) => (
                 <Card
                     key={index}
-                    className="card-hover animate-fade-in"
+                    className="border-gray-200 hover:border-gray-300 transition-colors animate-fade-in"
                     style={{animationDelay: `${index * 0.1}s`}}
                 >
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       <span className="text-4xl">{exp.icon}</span>
                       <div>
-                        <CardTitle className="text-2xl">{exp.title}</CardTitle>
-                        <p className="text-lg font-medium text-gray-600">{exp.description}</p>
+                        <h3 className="text-2xl font-bold text-gray-900">{exp.title}</h3>
+                        <p className="text-lg font-medium text-gray-700">{exp.description}</p>
                       </div>
                     </div>
                   </CardHeader>

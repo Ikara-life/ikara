@@ -5,8 +5,6 @@ export const geistSans = GeistSans;
 export const geistMono = GeistMono;
 
 export const fontVariables = `
-  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
-
   :root {
     --font-geist-sans: ${GeistSans.style.fontFamily};
     --font-geist-mono: ${GeistMono.style.fontFamily};

@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '../components/Hero.astro';
 import WhatIsIkara from '@/components/WhatIsIkara';
 import Experience from '@/components/Experience';
-import AboutUs from '@/components/AboutUs';
+import AboutUs from '@/components/AboutUs.astro';
 import Apply from '@/components/Apply';
 import Footer from '@/components/Footer';
 ---
@@ -25,7 +25,7 @@ import Footer from '@/components/Footer';
   <Hero/>
   <WhatIsIkara client:load/>
   <Experience client:load/>
-  <AboutUs client:load/>
+  <AboutUs/>
   <Apply client:load/>
 </main>
 <Footer client:load/>

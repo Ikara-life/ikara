@@ -1,18 +1,40 @@
 ---
 import HeroButtons from './ui/HeroButtons.astro';
+import { Image } from 'astro:assets';
+import heroBg from '../images/hero-bg.webp';
 ---
 
-<section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+<!-- Preload the hero image -->
+<link rel="preload" as="image" href={heroBg.src} />
+
+<section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
   <!-- Background with gradient overlay -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40"></div>
-  <div class="absolute inset-0 bg-cover bg-center"
-       style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+
+  <!-- Low resolution placeholder -->
+  <div class="absolute inset-0 bg-gray-900 blur-xl"></div>
+
+  <!-- Main image with blur-up effect -->
+  <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="hero-image">
+    <Image
+      src={heroBg}
+      alt="Hero background"
+      class="w-full h-full object-cover"
+      loading="eager"
+      format="webp"
+      decoding="async"
+      width={1920}
+      height={1080}
+      sizes="100vw"
+      onload="document.getElementById('hero-image').classList.remove('opacity-0')"
+    />
+  </div>
 
   <div class="container relative z-10 text-center px-4">
-    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in gradient-text">
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 text-gradient">
       A New Rhythm for Living
     </h1>
-    <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto animate-fade-in [animation-delay:0.2s]">
+    <p class="hero-text text-white/90 mb-12 max-w-3xl mx-auto">
       In a world moving too fast, Ikara is a gentle pause — a compass guiding you toward what really
       matters.
     </p>
@@ -38,29 +60,22 @@ import HeroButtons from './ui/HeroButtons.astro';
 </section>
 
 <style>
-  .hero-bg {
-    background-color: #1a365d; /* Fallback color */
-  }
-
-  .gradient-text {
+  .text-gradient {
     background: linear-gradient(to right, #fff, #e2e8f0);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .hero-text {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
-  .animate-fade-in {
-    animation: fade-in 1s ease-out forwards;
+  @media (min-width: 768px) {
+    .hero-text {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 </style>
