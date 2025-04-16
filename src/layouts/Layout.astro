@@ -1,40 +1,40 @@
 ---
-import { BasicMouse } from "../components/MouseEffects";
+import {BasicMouse} from "../components/MouseEffects";
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="generator" content={Astro.generator}/>
 
-    <!-- Preload critical fonts -->
-    <link
+  <!-- Preload critical fonts -->
+  <link
       rel="preload"
       href="https://fonts.gstatic.com/s/dancingscript/v24/If2cXTr6YS-zF4S-kcS8ViWqR_3kxR_h9XmDkM5J5A.woff2"
       as="font"
       type="font/woff2"
       crossorigin
-    />
+  />
 
-    <!-- Add font-display: swap to the font import -->
-    <link
+  <!-- Add font-display: swap to the font import -->
+  <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
       media="print"
       onload="this.media='all'"
-    />
+  />
 
-    <style is:global>
-      body {
-        cursor: none;
-      }
-    </style>
-  </head>
-  <body>
-    <BasicMouse client:only="react" />
-    <slot />
-  </body>
+  <style is:global>
+    body {
+      cursor: none;
+    }
+  </style>
+</head>
+<body>
+<BasicMouse client:only="react"/>
+<slot/>
+</body>
 </html>

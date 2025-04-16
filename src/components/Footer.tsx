@@ -8,7 +8,8 @@ export default function Footer() {
               <span className="text-sm mr-2 text-gradient">+</span>
               <h3 className="text-sm font-medium text-gradient">Contact Us</h3>
             </div>
-            <h2 className="text-4xl font-bold mb-4 text-gradient">Interested in a new rhythm for living?</h2>
+            <h2 className="text-4xl font-bold mb-4 text-gradient">Interested in a new rhythm for
+              living?</h2>
           </div>
 
           <div className="mt-24 flex flex-col md:flex-row justify-between items-start">

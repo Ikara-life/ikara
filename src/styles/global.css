@@ -114,13 +114,13 @@
   .ikara-gradient {
     background: white;
     background-image: radial-gradient(circle at 15% 50%, #03738C 0%, transparent 25%),
-                     radial-gradient(circle at 40% 70%, #9CCED9 0%, transparent 30%),
-                     radial-gradient(circle at 70% 20%, #037F8C 0%, transparent 35%),
-                     radial-gradient(circle at 85% 60%, #194023 0%, transparent 25%),
-                     radial-gradient(circle at 55% 40%, #F2B6A0 0%, transparent 30%),
-                     radial-gradient(circle at 25% 20%, #F2B6A0 0%, transparent 20%),
-                     radial-gradient(circle at 75% 50%, #F2B6A0 0%, transparent 25%),
-                     radial-gradient(circle at 30% 80%, #F2B6A0 0%, transparent 15%);
+    radial-gradient(circle at 40% 70%, #9CCED9 0%, transparent 30%),
+    radial-gradient(circle at 70% 20%, #037F8C 0%, transparent 35%),
+    radial-gradient(circle at 85% 60%, #194023 0%, transparent 25%),
+    radial-gradient(circle at 55% 40%, #F2B6A0 0%, transparent 30%),
+    radial-gradient(circle at 25% 20%, #F2B6A0 0%, transparent 20%),
+    radial-gradient(circle at 75% 50%, #F2B6A0 0%, transparent 25%),
+    radial-gradient(circle at 30% 80%, #F2B6A0 0%, transparent 15%);
   }
 }
 
@@ -165,14 +165,14 @@
 /* Button styles */
 .btn-primary {
   @apply bg-black text-white px-8 py-4 rounded-md font-medium
-         transition-all duration-300 hover:bg-gray-800
-         hover:shadow-lg transform hover:-translate-y-1;
+  transition-all duration-300 hover:bg-gray-800
+  hover:shadow-lg transform hover:-translate-y-1;
 }
 
 .btn-secondary {
   @apply border-2 border-black text-black px-8 py-4 rounded-md font-medium
-         transition-all duration-300 hover:bg-black hover:text-white
-         hover:shadow-lg transform hover:-translate-y-1;
+  transition-all duration-300 hover:bg-black hover:text-white
+  hover:shadow-lg transform hover:-translate-y-1;
 }
 
 /* Custom scrollbar */

@@ -10,7 +10,8 @@ export default function Apply() {
 
           <div className="max-w-4xl mx-auto space-y-12">
             <p className="text-xl md:text-2xl text-center animate-fade-in [animation-delay:0.2s] text-gradient">
-              Ready to embark on your Ikara journey? Our application process is simple but thoughtful.
+              Ready to embark on your Ikara journey? Our application process is simple but
+              thoughtful.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 animate-fade-in [animation-delay:0.4s]">
@@ -18,15 +19,18 @@ export default function Apply() {
                 <h3 className="text-2xl font-bold mb-6 text-gradient">How It Works:</h3>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center">1</span>
+                    <span
+                        className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center">1</span>
                     <span className="text-lg text-gradient">Submit a short application</span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center">2</span>
+                    <span
+                        className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center">2</span>
                     <span className="text-lg text-gradient">We'll reach out if it's a match</span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center">3</span>
+                    <span
+                        className="flex-shrink-0 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center">3</span>
                     <span className="text-lg text-gradient">Confirm your week and get packing</span>
                   </div>
                 </div>
@@ -36,15 +40,19 @@ export default function Apply() {
                 <h3 className="text-2xl font-bold mb-6 text-gradient">What We Look For:</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <span className="flex-shrink-0 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center">✓</span>
+                    <span
+                        className="flex-shrink-0 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center">✓</span>
                     <span className="text-lg text-gradient">Purpose-driven explorers</span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <span className="flex-shrink-0 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center">✓</span>
-                    <span className="text-lg text-gradient">Mindful creators and remote workers</span>
+                    <span
+                        className="flex-shrink-0 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center">✓</span>
+                    <span
+                        className="text-lg text-gradient">Mindful creators and remote workers</span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <span className="flex-shrink-0 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center">✓</span>
+                    <span
+                        className="flex-shrink-0 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center">✓</span>
                     <span className="text-lg text-gradient">Open hearts and intentional minds</span>
                   </div>
                 </div>
