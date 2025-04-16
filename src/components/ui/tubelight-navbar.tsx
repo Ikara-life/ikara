@@ -1,19 +1,18 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import type { LucideIcon } from "lucide-react";
 
 interface NavItem {
+  icon: React.ComponentType<{ size?: number; strokeWidth?: number }>;
   name: string;
   url: string;
-  icon: LucideIcon;
 }
 
 interface NavBarProps {
-  items: NavItem[];
   className?: string;
+  items: NavItem[];
 }
 
 export function NavBar({ items, className }: NavBarProps) {
@@ -45,7 +44,7 @@ export function NavBar({ items, className }: NavBarProps) {
           }
         });
       },
-      { threshold: 0.6 }, // Adjust threshold as needed
+      { threshold: 0.6 },
     );
 
     items.forEach((item) => {
@@ -71,7 +70,7 @@ export function NavBar({ items, className }: NavBarProps) {
     >
       <div className="flex items-center gap-6 bg-background/5 border border-transparent backdrop-blur-lg py-2 px-3 rounded-full shadow-lg">
         {items.map((item) => {
-          const Icon = item.icon;
+          const IconComponent = item.icon; // Use the icon as a React component
           const isActive = activeTab === item.name;
 
           return (
@@ -87,7 +86,7 @@ export function NavBar({ items, className }: NavBarProps) {
             >
               <span className="hidden md:inline">{item.name}</span>
               <span className="md:hidden">
-                <Icon size={18} strokeWidth={2.5} />
+                <IconComponent size={18} strokeWidth={2.5} />
               </span>
               {isActive && (
                 <motion.div
