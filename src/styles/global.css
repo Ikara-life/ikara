@@ -1,15 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Font face declarations */
-@font-face {
-  font-family: "Geist Sans";
-  src: url("https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/geist-sans.woff2") format("woff2");
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-}
-
 @font-face {
   font-family: "Geist Mono";
   src: url("https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/geist-mono.woff2") format("woff2");
@@ -107,10 +98,6 @@
 
   .text-gradient {
     @apply bg-gradient-to-r from-black via-gray-800 to-gray-600 bg-clip-text text-transparent;
-  }
-
-  .theme-gradient {
-    @apply bg-gradient-to-r from-amber-600 via-amber-500 to-amber-400 bg-clip-text text-transparent;
   }
 
   .ikara-gradient {
