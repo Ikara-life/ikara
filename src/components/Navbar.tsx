@@ -4,7 +4,7 @@ import {Bolt, SmilePlus, Speech, User, Icon} from "lucide-react";
 
 const navItems = [
   {name: "Home", url: "#hero", icon: Bolt},
-  {name: "About Ikara", url: "#about", icon: () => <Icon iconNode={yinYang} />},
+  {name: "About Ikara", url: "#about", icon: () => <Icon iconNode={yinYang}/>},
   {name: "The Experience", url: "#experience", icon: SmilePlus},
   {name: "About Us", url: "#about-us", icon: User},
   {name: "Apply", url: "#apply", icon: Speech},
