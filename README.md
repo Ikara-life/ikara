@@ -41,13 +41,13 @@ Ikara serves as a robust foundation for building modern web applications, perfec
 │   └── images/
 ├── src/
 │   ├── components/
-│   │   ├── AboutUs.tsx
+│   │   ├── About.tsx
 │   │   ├── Apply.tsx
 │   │   ├── Experience.tsx
 │   │   ├── Footer.tsx
 │   │   ├── Hero.astro
 │   │   ├── Navbar.tsx
-│   │   └── WhatIsIkara.tsx
+│   │   └── Ikara.tsx
 │   ├── layouts/
 │   ├── lib/
 │   ├── pages/

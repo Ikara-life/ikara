@@ -1,9 +1,9 @@
 import {Card, CardContent} from "@/components/ui/card";
-import {Zap, Settings2, Sparkles} from "lucide-react";
+import {Settings2, Sparkles, Zap} from "lucide-react";
 
-export default function WhatIsIkara() {
+export default function Ikara() {
   return (
-      <section id="about" className="section-padding bg-gray-50">
+      <section id="ikara" className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 animate-fade-in">

@@ -44,7 +44,12 @@ export function NavBar({items, className}: NavBarProps) {
             }
           });
         },
-        {threshold: 0.6},
+        {
+          // Using a lower threshold and adjusted rootMargin for better sensitivity
+          threshold: isMobile ? 0.2 : 0.4,
+          // Add rootMargin to adjust the detection area (negative value to trigger earlier)
+          rootMargin: isMobile ? "-20% 0px" : "-10% 0px",
+        },
     );
 
     items.forEach((item) => {
@@ -59,19 +64,21 @@ export function NavBar({items, className}: NavBarProps) {
     return () => {
       observer.disconnect();
     };
-  }, [items]);
+  }, [items, isMobile]);
+
+  const isInHeroSection = className?.includes('text-white');
 
   return (
       <div
           className={cn(
-              "fixed left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+              "fixed left-1/2 -translate-x-1/2 z-[100] mb-6 sm:pt-6 w-[90%] max-w-screen-md",
               className,
           )}
       >
         <div
-            className="flex items-center gap-6 bg-background/5 border border-transparent backdrop-blur-lg py-2 px-3 rounded-full shadow-lg">
+            className="flex items-center justify-between w-full bg-background/5 border border-transparent backdrop-blur-lg py-1 px-1.5 xs:py-1.5 xs:px-2 sm:py-2 sm:px-3 rounded-full shadow-lg">
           {items.map((item) => {
-            const IconComponent = item.icon; // Use the icon as a React component
+            const IconComponent = item.icon;
             const isActive = activeTab === item.name;
 
             return (
@@ -80,19 +87,29 @@ export function NavBar({items, className}: NavBarProps) {
                     href={item.url}
                     onClick={() => setActiveTab(item.name)}
                     className={cn(
-                        "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                        "text-foreground/80 hover:text-primary",
-                        isActive && "bg-muted text-primary",
+                        "relative cursor-pointer text-xs font-semibold rounded-full transition-colors flex flex-col items-center flex-1 justify-center",
+                        "hover:text-primary px-1 py-1 xs:px-1.5",
+                        "md:px-2 md:py-1.5 md:flex-row md:gap-1.5",
+                        isActive ? "bg-muted text-primary" : "",
+                        // Inherit text color from parent
+                        isInHeroSection ? "text-white hover:text-white" : "hover:text-[#1A1F2C]"
                     )}
                 >
-                  <span className="hidden md:inline">{item.name}</span>
                   <span className="md:hidden">
-                <IconComponent size={18} strokeWidth={2.5}/>
-              </span>
+                    <IconComponent size={16} strokeWidth={2.5}/>
+                  </span>
+                  <span
+                      className="md:hidden text-[8px] xs:text-[9px] mt-0.5 whitespace-nowrap">{item.name}</span>
+
+                  <span className="hidden md:inline whitespace-nowrap text-sm">{item.name}</span>
+
                   {isActive && (
                       <motion.div
                           layoutId="lamp"
-                          className="absolute inset-0 w-full bg-black/5 rounded-full -z-10"
+                          className={cn(
+                              "absolute inset-0 w-full rounded-full -z-10",
+                              isInHeroSection ? "bg-white/10" : "bg-black/5"
+                          )}
                           initial={false}
                           transition={{
                             type: "spring",
@@ -101,13 +118,25 @@ export function NavBar({items, className}: NavBarProps) {
                           }}
                       >
                         <div
-                            className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-black rounded-t-full">
+                            className={cn(
+                                "absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full",
+                                isInHeroSection ? "bg-white/60" : "bg-black"
+                            )}>
                           <div
-                              className="absolute w-12 h-6 bg-black/20 rounded-full blur-md -top-2 -left-2"/>
+                              className={cn(
+                                  "absolute w-12 h-6 rounded-full blur-md -top-2 -left-2",
+                                  isInHeroSection ? "bg-white/20" : "bg-black/20"
+                              )}/>
                           <div
-                              className="absolute w-8 h-6 bg-black/20 rounded-full blur-md -top-1"/>
+                              className={cn(
+                                  "absolute w-8 h-6 rounded-full blur-md -top-1",
+                                  isInHeroSection ? "bg-white/20" : "bg-black/20"
+                              )}/>
                           <div
-                              className="absolute w-4 h-4 bg-black/20 rounded-full blur-sm top-0 left-2"/>
+                              className={cn(
+                                  "absolute w-4 h-4 rounded-full blur-sm top-0 left-2",
+                                  isInHeroSection ? "bg-white/20" : "bg-black/20"
+                              )}/>
                         </div>
                       </motion.div>
                   )}
