@@ -10,6 +10,7 @@ export default defineConfig({
     defaultStrategy: 'hover',
   },
   site: 'https://ma-shangrila.com',
+  base: '/ikara',
   integrations: [react(), (await import("@playform/compress")).default()],
   vite: {
     plugins: [tailwindcss()],
