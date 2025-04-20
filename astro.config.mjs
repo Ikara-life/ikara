@@ -7,7 +7,7 @@ import compress from "@playform/compress";
 export default defineConfig({
   output: 'static',
   base: '/ikara/',
-  site: 'https://ikara-life.github.io/ikara/',
+  site: 'https://Ikara-life.github.io/ikara/',
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover',
