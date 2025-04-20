@@ -8,7 +8,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  IMAGE_NAME: ikara2025/ikara-ui/${{ github.ref_name  }}
+  IMAGE_NAME: ikara2025/ikara-ui
 
 jobs:
   build-and-push:
