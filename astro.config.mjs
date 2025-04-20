@@ -5,11 +5,12 @@ import react from "@astrojs/react";
 
 export default defineConfig({
   output: 'static',
+  base: '/ikara/',
+  site: 'https://ikara-life.github.io/ikara/',
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover',
   },
-  site: 'https://ma-shangrila.com',
   integrations: [react(), (await import("@playform/compress")).default()],
   vite: {
     plugins: [tailwindcss()],
