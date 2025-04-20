@@ -9,6 +9,7 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: 'hover',
   },
+  site: 'https://ma-shangrila.com',
   integrations: [react(), (await import("@playform/compress")).default()],
   vite: {
     plugins: [tailwindcss()],
