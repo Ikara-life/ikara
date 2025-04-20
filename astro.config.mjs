@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 
 export default defineConfig({
   base: '/ikara/',
-  //site: 'https://ma-shangrila.com',
+  site: 'https://ikara-life.github.io/ikara/',
   output: 'static',
   prefetch: {
     prefetchAll: true,
