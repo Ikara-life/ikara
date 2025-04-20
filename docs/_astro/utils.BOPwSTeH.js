@@ -1,0 +1,1 @@
+function n(...n){return n.filter(Boolean).join(" ")}export{n as c};
