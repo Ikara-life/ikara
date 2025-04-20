@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ikara-life.github.io/ikara/sitemap-index.xml
