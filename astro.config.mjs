@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
+import compress from "@playform/compress";
 
 export default defineConfig({
   output: 'static',
@@ -11,7 +12,7 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: 'hover',
   },
-  integrations: [react(), (await import("@playform/compress")).default()],
+  integrations: [react(), compress()],
   vite: {
     plugins: [tailwindcss()],
     build: {
