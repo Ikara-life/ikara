@@ -6,14 +6,13 @@ import compress from "@playform/compress";
 
 export default defineConfig({
   output: 'static',
-  base: '/ikara/',
-  site: 'https://ikara-life.github.io/ikara/',
+  site: 'https://ikara-life.github.io',
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover',
   },
   build: {
-    client: './dist', // ✅ optional if sticking to default
+    client: './dist',
   },
   integrations: [react(), compress()],
   vite: {
