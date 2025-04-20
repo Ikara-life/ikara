@@ -4,13 +4,17 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 
 export default defineConfig({
+  base: '/ikara/',
+  //site: 'https://ma-shangrila.com',
   output: 'static',
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover',
   },
-  site: 'https://ma-shangrila.com',
-  integrations: [react(), (await import("@playform/compress")).default()],
+  integrations: [
+    react(),
+    (await import("@playform/compress")).default()
+  ],
   vite: {
     plugins: [tailwindcss()],
     build: {
