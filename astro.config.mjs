@@ -9,8 +9,7 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: 'hover',
   },
-  site: 'https://ma-shangrila.com',
-  base: '/ikara',
+  site: 'https://ikara-life.github.io',
   integrations: [react(), (await import("@playform/compress")).default()],
   vite: {
     plugins: [tailwindcss()],
