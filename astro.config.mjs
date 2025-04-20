@@ -8,10 +8,12 @@ export default defineConfig({
   output: 'static',
   base: '/ikara/',
   site: 'https://ikara-life.github.io/ikara/',
-  outDir: 'docs', // ✅ this is the correct placement
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover',
+  },
+  build: {
+    client: './dist', // ✅ optional if sticking to default
   },
   integrations: [react(), compress()],
   vite: {
