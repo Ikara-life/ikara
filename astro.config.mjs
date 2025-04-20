@@ -2,15 +2,20 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
+import compress from "@playform/compress";
 
 export default defineConfig({
   output: 'static',
+  base: '/ikara/',
+  site: 'https://ikara-life.github.io/ikara/',
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover',
   },
-  site: 'https://ikara-life.github.io',
-  integrations: [react(), (await import("@playform/compress")).default()],
+  build: {
+    client: './dist', // ✅ optional if sticking to default
+  },
+  integrations: [react(), compress()],
   vite: {
     plugins: [tailwindcss()],
     build: {
