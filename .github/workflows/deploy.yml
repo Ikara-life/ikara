@@ -21,16 +21,14 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Astro
-        run: |
-            npm run build
-            ls -la
-            cd dist
-            ls -la
-            cat index.html
-
+        run: npm run build
+            
+      - name: Create .nojekyll
+        run: echo "" > ./dist/.nojekyll
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
