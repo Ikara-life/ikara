@@ -2,54 +2,49 @@
 import '../styles/global.css';
 import Navbar from "../components/Navbar";
 import Hero from '../components/Hero.astro';
-import Ikara from "../components/Ikara";
-import Experience from "../components/Experience";
-import About from "../components/About";
-import Apply from "../components/Apply";
-import Footer from "../components/Footer";
+import Ikara from "../components/Ikara.astro";
+import Experience from "../components/Experience.astro";
+import About from "../components/About.astro";
+import Apply from "../components/Apply.astro";
+import Footer from "../components/Footer.astro";
 import Layout from '@/layouts/Layout.astro';
+
+// SEO metadata
+const title = "Ikara - A New Rhythm for Living";
+const description = "Ikara - A modern retreat for remote workers, founders, and creatives to reconnect with purpose, peace, and presence.";
 ---
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description"
-          content="Ikara - A modern retreat for remote workers, founders, and creatives to reconnect with purpose, peace, and presence."/>
-    <meta name="keywords"
-          content="Ikara, retreat, remote work, mindfulness, creativity, wellness, Arunachal Pradesh, nature, balance"/>
-    <meta name="author" content="Ikara Team"/>
-    <meta property="og:title" content="Ikara - A New Rhythm for Living"/>
-    <meta property="og:description"
-          content="Discover Ikara, a serene retreat designed to help you reconnect with yourself, your work, and the world."/>
-    <meta property="og:image" content="/images/hero-bg.webp"/>
-    <meta property="og:url" content="https://ikara.app"/>
-    <meta property="og:type" content="website"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Ikara - A New Rhythm for Living"/>
-    <meta name="twitter:description"
-          content="Join Ikara, a retreat for mindful living and creative exploration."/>
-    <meta name="twitter:image" content="/images/hero-bg.webp"/>
-    <link rel="sitemap" href="/sitemap-index.xml"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <meta name="generator" content={Astro.generator}/>
-    <title>Ikara - A New Rhythm for Living</title>
-</head>
-
-<body style="background: var(--footer-background)">
 <Layout>
+    <meta slot="head" charset="UTF-8"/>
+    <meta slot="head" name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta slot="head" name="description" content={description}/>
+    <meta slot="head" name="keywords"
+          content="Ikara, retreat, remote work, mindfulness, creativity, wellness, Arunachal Pradesh, nature, balance"/>
+    <meta slot="head" name="author" content="Ikara Team"/>
+    <meta slot="head" property="og:title" content={title}/>
+    <meta slot="head" property="og:description"
+          content="Discover Ikara, a serene retreat designed to help you reconnect with yourself, your work, and the world."/>
+    <meta slot="head" property="og:image" content="/images/hero-bg.webp"/>
+    <meta slot="head" property="og:url" content="https://ikara.app"/>
+    <meta slot="head" property="og:type" content="website"/>
+    <meta slot="head" name="twitter:card" content="summary_large_image"/>
+    <meta slot="head" name="twitter:title" content={title}/>
+    <meta slot="head" name="twitter:description"
+          content="Join Ikara, a retreat for mindful living and creative exploration."/>
+    <meta slot="head" name="twitter:image" content="/images/hero-bg.webp"/>
+    <link slot="head" rel="sitemap" href="/sitemap-index.xml"/>
+    <title slot="head">{title}</title>
+
     <Navbar client:load/>
-    <main style="background: var(--content-background)">
+    <main class="bg-white">
         <Hero/>
-        <Ikara client:load/>
-        <Experience client:load/>
-        <About client:load/>
-        <Apply client:load/>
+        <Ikara/>
+        <Experience/>
+        <About/>
+        <Apply/>
     </main>
-    <Footer client:load/>
+    <Footer/>
 </Layout>
-</body>
-</html>
 
 <style is:global>
     :root {

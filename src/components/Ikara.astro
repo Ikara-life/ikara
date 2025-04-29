@@ -1,0 +1,110 @@
+---
+import AnimatedTextCycle from "./ui/AnimatedTextCycle.tsx";
+import {AppleCard} from "@/components/ui/apple-card";
+import type {ImageMetadata} from 'astro';
+import { getImage } from 'astro:assets';
+
+const imageFiles = import.meta.glob<{ default: ImageMetadata }>('/src/images/ikara/*.{jpeg,jpg,png,gif,webp}', {eager: false});
+
+const titles = [
+    "Discover",
+    "Explore",
+    "Experience",
+    "Embrace",
+    "Return to",
+    "Awaken to",
+    "Journey into"
+];
+
+const ikaraCards = [
+    {
+        title: "Intention",
+        description: "This isn't about isolation",
+        details: "It's about creating a space where you can focus on what truly matters, with purpose and clarity.",
+        imagePath: "/src/images/ikara/workspace.webp"
+    },
+    {
+        title: "Shifting Gears",
+        description: "This isn't about stopping",
+        details: "It's about finding a different rhythm that allows you to be productive while staying connected to yourself and nature.",
+        imagePath: "/src/images/ikara/nature.webp"
+    },
+    {
+        title: "New Perspective",
+        description: "This isn't just a getaway",
+        details: "It's a glimpse of how life could be when you align your work with your values and natural rhythms.",
+        imagePath: "/src/images/ikara/hilltop-view.webp"
+    }
+];
+
+// Load all images and optimize them with getImage()
+const ikaraCardsWithImages = await Promise.all(
+    ikaraCards.map(async (card) => {
+        const {default: image} = await imageFiles[card.imagePath]();
+
+        // Optimize the image using getImage()
+        const optimizedImage = await getImage({
+            src: image,
+            format: 'webp',
+            width: 800,
+            height: 600,
+            quality: 80
+        });
+
+        return {
+            ...card,
+            image,
+            optimizedSrc: optimizedImage.src
+        };
+    })
+);
+---
+
+<section id="ikara" class="section-padding bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="section-title section-title-sm animate-fade-in flex items-center justify-center gap-2 whitespace-nowrap">
+                <AnimatedTextCycle
+                        words={titles}
+                        interval={3000}
+                        className="text-gradient"
+                        client:load
+                />
+                <span class="text-gradient">Ikara</span>
+            </h2>
+            <p class="text-lg md:text-xl mt-4 text-gray-600 animate-fade-in [animation-delay:0.1s]">
+                Not an escape — a return to purpose, peace, and presence.
+            </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-12">
+            <p class="text-xl md:text-2xl text-center animate-fade-in [animation-delay:0.2s] text-gray-900">
+                Ikara is a week-long, immersive experience for remote workers,
+                founders, creatives, and seekers to reconnect with themselves, their
+                work, and the world — all from a serene hilltop in Arunachal
+                Pradesh.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-lg animate-fade-in [animation-delay:0.4s]">
+                {ikaraCardsWithImages.map((card, index) => (
+                        <div>
+                            <AppleCard
+                                    id={card.title}
+                                    src={card.optimizedSrc}
+                                    title={card.title}
+                                    category={card.description}
+                                    content={`<div class="prose prose-lg"><p class="text-lg text-gray-700">${card.details}</p></div>`}
+                                    client:load
+                            />
+                        </div>
+                ))}
+            </div>
+
+            <blockquote
+                    class="text-xl md:text-2xl font-medium text-center mt-12 animate-fade-in [animation-delay:0.6s] italic text-gray-900">
+                "We believe the future belongs to those who can be both still and in
+                motion."
+            </blockquote>
+        </div>
+    </div>
+</section>

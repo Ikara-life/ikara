@@ -7,7 +7,7 @@ import {Image} from 'astro:assets';
             src={Astro.props.src}
             alt={Astro.props.alt}
             class="w-full h-full object-cover filter blur-2xl scale-100"
-            loading="lazy"
+            loading="eager"
             decoding="async"
             sizes="100vw"
     />
@@ -18,7 +18,7 @@ import {Image} from 'astro:assets';
             src={Astro.props.src}
             alt={Astro.props.alt}
             class="w-full h-full object-cover brightness-75"
-            loading="lazy"
+            loading="eager"
             decoding="async"
             sizes="100vw"
             onload="document.getElementById('hero-full').classList.remove('opacity-0')"
