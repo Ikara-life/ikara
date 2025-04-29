@@ -1,10 +1,12 @@
 ---
-import { Carousel } from "@/components/ui/apple-cards-carousel";
-import { type AppleCardProps } from "@/components/ui/apple-card";
-import type { ImageMetadata } from 'astro';
-import { getImage } from 'astro:assets';
+import {Carousel} from "./ui/AppleCardsCarousel";
+import type {AppleCardProps} from "./ui/AppleCard";
+import type {ImageMetadata} from 'astro';
+import {getImage} from 'astro:assets';
 
-const imageFiles = import.meta.glob<{ default: ImageMetadata }>('/src/images/experiences/*.{jpeg,jpg,png,gif,webp}', { eager: false });
+const imageFiles = import.meta.glob<{
+    default: ImageMetadata
+}>('/src/images/experiences/*.{jpeg,jpg,png,gif,webp}', {eager: false});
 
 const experiences = [
     {
@@ -60,7 +62,7 @@ const experiences = [
 // Load all images and optimize them with getImage()
 const experienceImages = await Promise.all(
     experiences.map(async (exp) => {
-        const { default: image } = await imageFiles[exp.imagePath]();
+        const {default: image} = await imageFiles[exp.imagePath]();
 
         // Optimize the image using getImage()
         const optimizedImage = await getImage({
@@ -87,14 +89,14 @@ const experienceImages = await Promise.all(
         </h2>
 
         <Carousel
-            items={experienceImages.map((exp): AppleCardProps => ({
-                id: exp.title,
-                src: exp.optimizedSrc,
-                title: exp.title,
-                category: exp.description,
-                content: `<div class="prose prose-lg"><p class="text-lg text-gray-700">${exp.details}</p></div>`
-            }))}
-            client:load
+                items={experienceImages.map((exp): AppleCardProps => ({
+                    id: exp.title,
+                    src: exp.optimizedSrc,
+                    title: exp.title,
+                    category: exp.description,
+                    content: `<div class="prose prose-lg"><p class="text-lg text-gray-700">${exp.details}</p></div>`
+                }))}
+                client:load
         />
     </div>
 </section>

@@ -3,8 +3,8 @@ import React, {useEffect, useMemo, useState} from "react";
 import {IconArrowNarrowLeft, IconArrowNarrowRight} from "@tabler/icons-react";
 import {cn} from "@/lib/utils";
 import {motion} from "motion/react";
-import {AppleCard, type AppleCardProps} from "./apple-card";
-import {CarouselContext} from "./carousel-context";
+import {AppleCard, type AppleCardProps} from "./AppleCard";
+import {CarouselContext} from "./CarouselContext";
 
 interface CarouselProps {
     items: AppleCardProps[];

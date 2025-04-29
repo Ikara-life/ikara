@@ -1,10 +1,12 @@
 ---
 import AnimatedTextCycle from "./ui/AnimatedTextCycle.tsx";
-import {AppleCard} from "@/components/ui/apple-card";
+import {AppleCard} from "./ui/AppleCard";
 import type {ImageMetadata} from 'astro';
-import { getImage } from 'astro:assets';
+import {getImage} from 'astro:assets';
 
-const imageFiles = import.meta.glob<{ default: ImageMetadata }>('/src/images/ikara/*.{jpeg,jpg,png,gif,webp}', {eager: false});
+const imageFiles = import.meta.glob<{
+    default: ImageMetadata
+}>('/src/images/ikara/*.{jpeg,jpg,png,gif,webp}', {eager: false});
 
 const titles = [
     "Discover",
@@ -85,9 +87,15 @@ const ikaraCardsWithImages = await Promise.all(
                 Pradesh.
             </p>
 
-            <div class="grid md:grid-cols-3 gap-lg animate-fade-in [animation-delay:0.4s]">
+            <div class="flex flex-row overflow-x-auto gap-8 px-4 py-6 pb-8 animate-fade-in [animation-delay:0.4s] justify-start md:justify-center"
+                 style="scrollbar-width: none; -ms-overflow-style: none;">
+                <style>
+                    .overflow-x-auto::-webkit-scrollbar {
+                        display: none;
+                    }
+                </style>
                 {ikaraCardsWithImages.map((card, index) => (
-                        <div>
+                        <div class="flex-shrink-0 flex justify-center items-center">
                             <AppleCard
                                     id={card.title}
                                     src={card.optimizedSrc}
@@ -99,7 +107,6 @@ const ikaraCardsWithImages = await Promise.all(
                         </div>
                 ))}
             </div>
-
             <blockquote
                     class="text-xl md:text-2xl font-medium text-center mt-12 animate-fade-in [animation-delay:0.6s] italic text-gray-900">
                 "We believe the future belongs to those who can be both still and in

@@ -1,6 +1,6 @@
 "use client";
 
-import {NavBar} from "@/components/ui/tubelight-navbar";
+import {NavBar} from "./ui/TubeLightNavbar";
 import {yinYang} from "@lucide/lab";
 import {Bolt, createLucideIcon, SmilePlus, Speech, User} from "lucide-react";
 import {useEffect, useMemo, useState} from "react";

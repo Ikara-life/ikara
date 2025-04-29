@@ -15,7 +15,7 @@ interface NavBarProps {
     items: NavItem[];
 }
 
-export function NavBar({items, className}: NavBarProps) {
+export function NavBar({items, className}: Readonly<NavBarProps>) {
     const [activeTab, setActiveTab] = useState(items[0].name);
     const [isMobile, setIsMobile] = useState(false);
     const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
